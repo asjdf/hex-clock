@@ -120,5 +120,22 @@
     }
         
     refreshData();
+
+    if ('wakeLock' in navigator) {
+            const requestWakeLock = async () => {
+                try {
+                    wakeLock = await navigator.wakeLock.request('screen');
+                } catch (err) {
+                    console.log(err);
+                }
+            }
+            function handleVisibilityChange() {
+                if (document.visibilityState === 'visible') {
+                    requestWakeLock();
+                }
+            }
+            requestWakeLock();
+            document.addEventListener('visibilitychange', handleVisibilityChange);
+        }
     </script>
 </html>
