@@ -1,0 +1,21 @@
+{
+  "name": "hex-clock",
+  "version": "1.0.0",
+  "description": "一个把时间转为hexcode作为背景颜色的单页时钟",
+  "scripts": {
+    "test": "http-server ./ -a 0.0.0.0 -p 8080"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/asjdf/hex-clock.git"
+  },
+  "author": "HomeboyC",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/asjdf/hex-clock/issues"
+  },
+  "homepage": "https://github.com/asjdf/hex-clock",
+  "devdependencies": {
+    "http-server": "^14.1.1"
+  }
+}

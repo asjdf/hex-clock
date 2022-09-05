@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>HexClock - asjdf</title>
+        <meta name="description" content="一个把时间转为hexcode作为背景颜色的单页时钟">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./style.css">
+    </head>
+    <body>
+        <div id="bg" class="section main text-center">
+            #123456
+        </div>
+        <div class="section footer">
+            <div class="copyright">
+                <div class="float-left">
+                    <a href="https://homeboyc.cn/" class="gray">Blog</a>
+                    <a href="https://github.com/asjdf" class="gray">GitHub</a>
+                </div>
+                <div class="float-right">
+                    <a href="https://github.com/asjdf/hex-clock" class="gray">Source</a>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script>
+    let mainDom = document.getElementById('bg');
+    function refreshData()
+    {
+        let d = new Date()
+        let h = d.getHours();
+        let m = d.getMinutes();
+        let s = d.getSeconds();
+        
+        if (h<=9) {h = '0'+h};
+        if (m<=9) {m = '0'+m};
+        if (s<=9) {s = '0'+s};
+        
+        let	color = '#'+h+m+s;
+        
+        mainDom.innerText = color;
+        mainDom.style['background-color'] = color;           
+        setTimeout(refreshData, 1000);
+    }
+        
+    refreshData();
+    </script>
+</html>
