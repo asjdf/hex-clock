@@ -6,6 +6,7 @@
         <title>HexClock - asjdf</title>
         <meta name="description" content="一个把时间转为hexcode作为背景颜色的单页时钟">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ea7500">
         <link rel="stylesheet" href="./style.css">
     </head>
     <body>
@@ -26,6 +27,7 @@
     </body>
     <script>
     let mainDom = document.getElementById('bg');
+    let themeMeta = document.querySelector("meta[name=theme-color]");
     function refreshData()
     {
         let d = new Date()
@@ -40,7 +42,8 @@
         let	color = '#'+h+m+s;
         
         mainDom.innerText = color;
-        mainDom.style['background-color'] = color;           
+        mainDom.style['background-color'] = color; 
+        themeMeta.setAttribute("content", color);          
         setTimeout(refreshData, 1000);
     }
         
